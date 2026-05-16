@@ -1,4 +1,3 @@
-import React from 'react';
 import { format } from 'date-fns';
 import { Edit2, Trash2, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -12,7 +11,7 @@ interface LeadTableProps {
   canEditDelete: (lead: any) => boolean;
 }
 
-const LeadTable: React.FC<LeadTableProps> = ({ leads, isLoading, onEdit, onDelete, canEditDelete }) => {
+const LeadTable = ({ leads, isLoading, onEdit, onDelete, canEditDelete }: LeadTableProps) => {
   if (isLoading) {
     return (
       <div className="w-full h-64 flex items-center justify-center bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">

@@ -1,12 +1,18 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Sidebar from './Sidebar';
 import Header from './Header';
+import { useTheme } from '../context/ThemeContext';
 
 const DashboardLayout = () => {
+  const { theme } = useTheme();
+
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-gray-900 bg-[url('/dashboard-bg.png')] bg-cover bg-center transition-colors duration-200">
+    <div className={`flex h-screen w-screen overflow-hidden transition-all duration-700 ${
+      theme === 'dark' 
+        ? "bg-slate-950 bg-[url('/dashboard-bg-dark.png')]" 
+        : "bg-blue-50 bg-[url('/dashboard-bg.png')]"
+    } bg-cover bg-center`}>
       
       <div className="relative flex items-center justify-center w-full h-full p-4 sm:p-6 lg:p-8">
         <motion.div 

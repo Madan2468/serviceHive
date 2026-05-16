@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useForm as useReactHookForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -11,7 +11,7 @@ const leadSchema = z.object({
   source: z.enum(['Website', 'Instagram', 'Referral']),
 });
 
-type LeadFormValues = z.infer<typeof leadSchema>;
+
 
 interface LeadFormModalProps {
   isOpen: boolean;
@@ -20,8 +20,8 @@ interface LeadFormModalProps {
   initialData?: any;
 }
 
-const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose, onSubmit, initialData }) => {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useReactHookForm<LeadFormValues>({
+const LeadFormModal = ({ isOpen, onClose, onSubmit, initialData }: LeadFormModalProps) => {
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useReactHookForm<any>({
     resolver: zodResolver(leadSchema),
     defaultValues: {
       status: 'New',
@@ -71,7 +71,7 @@ const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose, onSubmit
               {...register('name')}
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-colors"
             />
-            {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
+            {errors.name && <p className="mt-1 text-sm text-red-600">{(errors.name as any).message}</p>}
           </div>
 
           <div>
@@ -80,7 +80,7 @@ const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose, onSubmit
               {...register('email')}
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white transition-colors"
             />
-            {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
+            {errors.email && <p className="mt-1 text-sm text-red-600">{(errors.email as any).message}</p>}
           </div>
 
           <div>
@@ -94,7 +94,7 @@ const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose, onSubmit
               <option value="Qualified">Qualified</option>
               <option value="Lost">Lost</option>
             </select>
-            {errors.status && <p className="mt-1 text-sm text-red-600">{errors.status.message}</p>}
+            {errors.status && <p className="mt-1 text-sm text-red-600">{(errors.status as any).message}</p>}
           </div>
 
           <div>
@@ -107,7 +107,7 @@ const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose, onSubmit
               <option value="Instagram">Instagram</option>
               <option value="Referral">Referral</option>
             </select>
-            {errors.source && <p className="mt-1 text-sm text-red-600">{errors.source.message}</p>}
+            {errors.source && <p className="mt-1 text-sm text-red-600">{(errors.source as any).message}</p>}
           </div>
 
           <div className="pt-4 flex justify-end gap-3">

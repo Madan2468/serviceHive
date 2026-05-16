@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Search, Filter, Download } from 'lucide-react';
-import api from '../utils/api';
+import { useState, useEffect } from 'react';
+import { Search, Download } from 'lucide-react';
 
 interface FiltersProps {
   onFilterChange: (filters: any) => void;
   onExport: () => void;
 }
 
-const Filters: React.FC<FiltersProps> = ({ onFilterChange, onExport }) => {
+const Filters = ({ onFilterChange, onExport }: FiltersProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [status, setStatus] = useState('');
   const [source, setSource] = useState('');

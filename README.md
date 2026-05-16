@@ -6,6 +6,7 @@ ServiceHive is a high-end, full-stack Lead Management & Intelligence Dashboard d
 
 ## ✨ Features
 
+- **📊 Performance Analytics**: Integrated real-time data visualization with Recharts, featuring lead activity trends, status distribution, and source analysis.
 - **🚀 3D Glassmorphic UI**: A premium, "floating window" design with abstract 3D backgrounds and deep backdrop blurs.
 - **📊 Leads Intelligence**: Real-time stats hero banner featuring Total Leads, Conversion Rates, and Active Pipeline tracking.
 - **🔐 Secure Authentication**: JWT-based system with protected routes and persistent sessions.
@@ -15,7 +16,7 @@ ServiceHive is a high-end, full-stack Lead Management & Intelligence Dashboard d
   - Debounced real-time search by Name or Email.
   - Multi-column sorting.
 - **📥 CSV Intelligence**: Export filtered and searched leads directly to CSV for external reporting.
-- **🌓 Adaptive Theme**: Fully integrated Dark and Light modes with smooth transitions.
+- **🌓 Adaptive Theme**: Fully integrated Dark and Light modes with smooth transitions and theme-aware 3D backgrounds.
 - **📱 Fluid Animations**: Powered by Framer Motion for staggered list entrances and interactive micro-animations.
 
 ## 🛠️ Tech Stack

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Plus, TrendingUp, Users, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Filters from '../components/Filters';
@@ -125,9 +125,9 @@ const LeadsList = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: any = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.4 } }
   };
 
   return (

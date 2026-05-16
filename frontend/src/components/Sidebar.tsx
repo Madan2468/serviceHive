@@ -1,6 +1,5 @@
-import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Users, BarChart3, LogOut, Settings } from 'lucide-react';
+import { Users, BarChart3, LogOut } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 
@@ -46,13 +45,12 @@ const Sidebar = () => {
         <NavLink
           to="/analytics"
           className={({ isActive }) =>
-            `flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+            `flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-300 font-medium ${
               isActive 
-                ? 'bg-primary/90 text-white shadow-md shadow-primary/20 backdrop-blur-sm' 
-                : 'text-gray-600 dark:text-gray-400 hover:bg-white/50 dark:hover:bg-gray-800/50 opacity-50 cursor-not-allowed'
+                ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-700 dark:text-blue-300 border border-white/30 dark:border-white/10 shadow-lg backdrop-blur-md' 
+                : 'text-gray-600 dark:text-gray-400 hover:bg-white/20 dark:hover:bg-white/5'
             }`
           }
-          onClick={(e) => e.preventDefault()}
         >
           <motion.div variants={navItemVariants} whileHover="hover" whileTap="tap" className="flex items-center gap-3 w-full">
             <BarChart3 size={20} />
